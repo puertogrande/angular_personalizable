@@ -56,21 +56,22 @@
             <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
           </div><!-- /.col-lg-4 -->
 
-         
 
-        <div class="col-lg-4" *ngFor="let molde of moldes">
-          <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-          <h2>{{molde.titulo}}</h2>
-          <p>{{molde.descripcion}}</p>
-          <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-        </div>
-
-        
-        
-
-         
-
-        </div><!-- /.row -->
+        <form [formGroup]="moldeFormGroup" (ngSubmit)="addMolde()">
+          <label> Titulo </label><br>
+          <input type="text" formControlName="titulo"><br>
+          <label> Descripcion </label><br>
+          <input type="text" formControlName="descripcion" ><br><br>
+          <input type="submit" value="Submit">
+      </form>
+      
+      <div *ngFor="let molde of todosmoldes">
+          <p>Nuevo molde</p>
+          <span> {{molde.titulo}} </span>
+          <span> {{molde.descripcion}}</span>
+      </div>
+      
+       
        
         
     
