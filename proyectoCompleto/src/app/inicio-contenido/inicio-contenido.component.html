@@ -45,6 +45,25 @@
 
 
     <!-- START THE FEATURETTES -->
+    <div class="container mt-5 mb-5">
+      <div class="row justify-content-center">
+        <h1>Crea Moldes</h1>
+      </div>
+      <div class="row justify-content-center">
+        <p>Los moldes te ayudaran a dar información sobre tu empresa</p>
+      </div>
+    </div>
+    
+   
+    <form [formGroup]="moldeFormGroup" (ngSubmit)="addMolde()">
+      <h1>Nuevo Molde</h1>
+      <label> Titulo </label><br>
+      <input type="text" formControlName="titulo"><br>
+      <label> Descripcion </label><br>
+      <input type="text" formControlName="descripcion" ><br><br>
+      <input type="submit" value="Submit">
+    </form>
+ 
     <div class="container marketing">
 
         <!-- Three columns of text below the carousel -->
@@ -56,22 +75,14 @@
             <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
           </div><!-- /.col-lg-4 -->
 
-
-        <form [formGroup]="moldeFormGroup" (ngSubmit)="addMolde()">
-          <label> Titulo </label><br>
-          <input type="text" formControlName="titulo"><br>
-          <label> Descripcion </label><br>
-          <input type="text" formControlName="descripcion" ><br><br>
-          <input type="submit" value="Submit">
-      </form>
-      
-      <div *ngFor="let molde of todosmoldes">
-          <p>Nuevo molde</p>
-          <span> {{molde.titulo}} </span>
-          <span> {{molde.descripcion}}</span>
+        <div class="col-lg-4" *ngFor="let molde of todosmoldes">
+          <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+          <h2>{{molde.titulo}} </h2>
+          <p>{{molde.descripcion}}</p>
+          <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
       </div>
-      
-       
+    </div>
+  </div>       
        
         
     

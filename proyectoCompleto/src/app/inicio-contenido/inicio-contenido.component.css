@@ -8,7 +8,9 @@ body {
     color: #5a5a5a;
   }
   
-  
+  form{
+    text-align:center;
+  }
   /* CUSTOMIZE THE CAROUSEL
   -------------------------------------------------- */
   
