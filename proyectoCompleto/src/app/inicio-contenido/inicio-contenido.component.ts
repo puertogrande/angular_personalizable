@@ -25,18 +25,24 @@ export class InicioContenidoComponent implements OnInit {
   ngOnInit(): void {
   }
   addMolde() {
-    console.log('submit');
     this.nuevoMolde = <Molde> this.moldeFormGroup.value;
-    //console.log(this.newBook instanceof Book);
-    console.log(this.nuevoMolde);
     this.todosmoldes.push(this.nuevoMolde);
-    console.log("Estos son todos los moldes");
-    console.log(this.todosmoldes);
     this.nuevoMolde = new Molde();
   }
+  changeMode(){
+    if(GlobalVars.modoCreacion){
+      GlobalVars.modoCreacion = false;
+    }
+    else{
+      GlobalVars.modoCreacion = true;
+    }
+    this.modo = GlobalVars.modoCreacion ;
+  }
+ 
 }
 
 class Molde {
   public titulo: string;
   public descripcion: string;
 }
+

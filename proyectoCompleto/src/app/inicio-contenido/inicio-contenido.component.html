@@ -1,5 +1,3 @@
-<p>inicio-contenido works!</p>
-
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -11,8 +9,7 @@
         <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
         <img src="../assets/images/campo.jpg" alt="campo" />
         <div class="container">
-          <div class="carousel-caption text-left">
-           
+          <div class="carousel-caption text-left"> 
             <h1>Grandes profesionales</h1>
             <p>Contamos con grandes profesionales con experiencia en el sector.</p>
             <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
@@ -45,27 +42,25 @@
 
 
     <!-- START THE FEATURETTES -->
-    <div class="container mt-5 mb-5">
+    <button (click)="changeMode()">Cambiar Modo</button>
+    <div *ngIf="modo" class="container mt-5 mb-5">
       <div class="row justify-content-center">
         <h1>Crea Moldes</h1>
       </div>
       <div class="row justify-content-center">
         <p>Los moldes te ayudaran a dar información sobre tu empresa</p>
       </div>
+      <form [formGroup]="moldeFormGroup" (ngSubmit)="addMolde()">
+        <h1>Nuevo Molde</h1>
+        <label> Titulo </label><br>
+        <input type="text" formControlName="titulo"><br>
+        <label> Descripcion </label><br>
+        <input type="text" formControlName="descripcion" ><br><br>
+        <input type="submit" value="Submit">
+      </form>
     </div>
-    
-   
-    <form [formGroup]="moldeFormGroup" (ngSubmit)="addMolde()">
-      <h1>Nuevo Molde</h1>
-      <label> Titulo </label><br>
-      <input type="text" formControlName="titulo"><br>
-      <label> Descripcion </label><br>
-      <input type="text" formControlName="descripcion" ><br><br>
-      <input type="submit" value="Submit">
-    </form>
  
     <div class="container marketing">
-
         <!-- Three columns of text below the carousel -->
         <div class="row">
           <div class="col-lg-4">
